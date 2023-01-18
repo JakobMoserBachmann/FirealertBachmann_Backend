@@ -4,7 +4,7 @@ import { Person } from './entities/person.entity';
 @Injectable()
 export class PeopleService {
 
-  findAll() : Promise<Person[]> {
+  findAll() : string {
     var person1 : Person = {
       Name : "MCSA",
       KeyNumber : "000765"
@@ -20,6 +20,8 @@ export class PeopleService {
       KeyNumber : "000763"
     }
     
-    return Promise.resolve([person1, person2, person3]);
+    var people = JSON.stringify([person1, person2, person3]);
+
+    return people; 
   }
 }
